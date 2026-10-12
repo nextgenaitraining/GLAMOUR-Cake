@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="si" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glamour Cake - Luxury & Creative Cake Studio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        glamRed: '#E50914',
+                        glamRedDark: '#990000',
+                        glamDark: '#0A0A0A',
+                        glamCard: '#141414',
+                        glamGold: '#D4AF37',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0A0A0A; color: #FFFFFF; }
+        .glass-panel { background: rgba(20, 20, 20, 0.85); backdrop-filter: blur(14px); border: 1px solid rgba(229, 9, 20, 0.25); }
+        .red-glow { box-shadow: 0 0 30px rgba(229, 9, 20, 0.4); }
+        .text-glow { text-shadow: 0 0 12px rgba(229, 9, 20, 0.7); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #E50914; border-radius: 4px; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-red-950/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="scrollToSection('hero')">
+                    <div class="w-12 h-12 rounded-full bg-glamRed flex items-center justify-center text-2xl font-black shadow-lg red-glow">
+                        <i class="fa-solid fa-crown text-white"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black tracking-wider text-white">GLAMOUR <span class="text-glamRed text-glow">CAKE</span></span>
+                        <p class="text-[10px] text-gray-400 uppercase tracking-widest">Luxury Cake Studio</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8 text-sm font-semibold">
+                    <a href="#hero" class="hover:text-glamRed transition">මුල් පිටුව</a>
+                    <a href="#catalog" class="hover:text-glamRed transition">කේක් වර්ග & මිල ගණන්</a>
+                    <a href="#about" class="hover:text-glamRed transition">අප ගැන</a>
+                    <a href="#contact" class="hover:text-glamRed transition">ඇණවුම් කරන්න</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button onclick="toggleCPanel()" class="px-4 py-2 bg-zinc-900 hover:bg-zinc-800 text-glamRed border border-glamRed/50 rounded-xl text-xs font-bold transition flex items-center gap-2 shadow-md">
+                        <i class="fa-solid fa-sliders"></i> Admin cPanel
+                    </button>
+                    <a href="#contact" class="hidden sm:inline-flex px-5 py-2.5 bg-glamRed hover:bg-glamRedDark text-white font-bold rounded-xl shadow-lg transition red-glow text-sm">
+                        Order Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-20 bg-[radial-gradient(#E50914_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-block px-4 py-1.5 rounded-full bg-red-950/70 border border-glamRed/50 text-glamRed font-semibold text-xs uppercase tracking-widest">
+                        ✨ Sri Lanka's Premium Cake Destination
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-tight">
+                        ඔබේ විශේෂ දිනය <br>
+                        <span class="text-glamRed text-glow">Glamour Cake</span> සමඟින්!
+                    </h1>
+                    <p class="text-gray-300 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+                        උසස්ම තත්ත්වයේ අමුද්‍රව්‍ය සහ අද්විතීය ඩිසයින් සමඟින් ඔබේ ඕනෑම උත්සවයකට ගැලපෙන රසවත්ම Glamorous Cakes එකම තැනකින්!
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                        <a href="#catalog" class="px-8 py-4 bg-glamRed hover:bg-glamRedDark text-white font-black text-lg rounded-2xl shadow-xl transition red-glow flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-utensils"></i> කේක් වර්ග බලන්න
+                        </a>
+                        <a href="#contact" class="px-8 py-4 bg-zinc-900 hover:bg-zinc-800 text-white border border-zinc-700 font-bold text-lg rounded-2xl transition flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-green-500 text-xl"></i> Instant WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="relative flex justify-center">
+                    <div class="w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-glamRed/20 absolute blur-3xl -z-10"></div>
+                    <img id="heroImage" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80" alt="Glamour Cake Featured" class="rounded-3xl shadow-2xl border-2 border-glamRed/40 object-cover w-full max-w-md h-96 sm:h-[450px] transform hover:scale-105 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalog" class="py-20 bg-black/90 border-t border-b border-red-950/40 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-3xl sm:text-5xl font-black tracking-tight">අපගේ <span class="text-glamRed text-glow">කේක් වර්ග</span> & මිල ගණන්</h2>
+                <p class="text-gray-400 text-sm sm:text-base">ඔබට අවශ්‍ය ඕනෑම Custom Design එකක් අප ලවා සකසා ගත හැක.</p>
+                <div id="filterContainer" class="flex flex-wrap justify-center gap-2 pt-4">
+                    <!-- Filters dynamically generated -->
+                </div>
+            </div>
+
+            <!-- Dynamic Cake Grid -->
+            <div id="cakeGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Cake Cards Injected Here via JS -->
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 relative bg-zinc-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-glamRed font-bold uppercase tracking-wider text-sm">Professional Cake Artist</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">
+                        ඇයි ඔබ <span class="text-glamRed">"Glamour Cake"</span> තෝරාගත යුත්තේ?
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        අප ආයතනය විසින් 100% ක්ම සෞඛ්‍යාරක්ෂිත සහ නැවුම් අමුද්‍රව්‍ය පමණක් භාවිතා කරමින් අලංකාරවත් කේක් නිර්මාණය කරනු ලබයි. උපන්දිනය, මංගල උත්සවය හෝ ඕනෑම විශේෂ අවස්ථාවකට ඔබට ගැළපෙනම කේක් එකක් අපි සාදා දෙන්නෙමු.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="glass-panel p-4 rounded-xl border-l-4 border-glamRed">
+                            <h4 class="font-bold text-lg text-white">100% Fresh & Delicious</h4>
+                            <p class="text-xs text-gray-400">Order එකට පසුවම නැවුම් ලෙස සාදනු ලැබේ.</p>
+                        </div>
+                        <div class="glass-panel p-4 rounded-xl border-l-4 border-glamRed">
+                            <h4 class="font-bold text-lg text-white">Customized Designs</h4>
+                            <p class="text-xs text-gray-400">ඔබේ කැමැත්ත පරිදිම Design කරගත හැක.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&w=800&q=80" alt="Crafting Cakes" class="rounded-2xl shadow-xl border border-red-900/40 w-full object-cover h-80 sm:h-96">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-black border-t border-red-900/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="glass-panel p-8 sm:p-12 rounded-3xl red-glow border border-glamRed/40 text-center space-y-6">
+                <h2 class="text-3xl sm:text-4xl font-black">කේක් එකක් <span class="text-glamRed">Order කරන්න</span></h2>
+                <p class="text-gray-300 text-sm sm:text-base max-w-xl mx-auto">
+                    පහත Form එක පුරවා Direct WhatsApp හරහා අප වෙත ඔබේ ඇණවුම යොමු කරන්න.
+                </p>
+                <form id="orderForm" onsubmit="handleOrderSubmit(event)" class="space-y-4 text-left max-w-lg mx-auto pt-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-400 mb-1">ඔබේ නම (Name)</label>
+                        <input type="text" id="custName" required placeholder="Ex: Kamal Perera" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-glamRed transition">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-400 mb-1">දුරකථන අංකය (Phone)</label>
+                            <input type="tel" id="custPhone" required placeholder="07X XXXXXXX" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-glamRed transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-400 mb-1">කේක් වර්ගය (Cake Type)</label>
+                            <select id="custCake" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-glamRed transition">
+                                <!-- Dynamic Options -->
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-400 mb-1">අවශ්‍ය දිනය සහ සටහන් (Date & Instructions)</label>
+                        <textarea id="custNotes" rows="3" placeholder="කේක් එකේ ලියන්න ඕනි නම, බර (Kg) හෝ වෙනත් උපදෙස්..." class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-glamRed transition"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-4 bg-glamRed hover:bg-glamRedDark text-white font-black text-lg rounded-xl shadow-lg transition red-glow flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> Direct Order via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-zinc-900 text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p class="font-bold text-gray-400">GLAMOUR CAKE &copy; 2026. All Rights Reserved. Luxury Cake Studio.</p>
+        </div>
+    </footer>
+
+    <div id="cPanelModal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-panel w-full max-w-4xl rounded-3xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto border border-glamRed/60 relative shadow-2xl">
+            
+            <div class="flex items-center justify-between pb-6 border-b border-zinc-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-glamRed/20 text-glamRed border border-glamRed/40 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-black text-white">Glamour Cake Admin cPanel</h3>
+                        <p class="text-xs text-gray-400">Manage products, prices, categories, and image uploads</p>
+                    </div>
+                </div>
+                <button onclick="toggleCPanel()" class="w-10 h-10 rounded-full bg-zinc-800 hover:bg-zinc-700 text-gray-300 flex items-center justify-center text-lg transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-6">
+                <!-- Form Column -->
+                <div class="lg:col-span-1 space-y-4 bg-zinc-900/90 p-5 rounded-2xl border border-zinc-800">
+                    <h4 id="formTitle" class="font-bold text-glamRed text-xs uppercase tracking-wider">නව කේක් එකක් එකතු කරන්න</h4>
+                    <form id="cakeForm" onsubmit="saveCake(event)" class="space-y-3 text-xs">
+                        <input type="hidden" id="cakeId">
+                        <div>
+                            <label class="block text-gray-400 font-bold mb-1">නම (Cake Name)</label>
+                            <input type="text" id="cakeName" required placeholder="Ex: Glamour Red Velvet" class="w-full bg-zinc-800 border border-zinc-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-glamRed">
+                        </div>
+                        <div>
+                            <label class="block text-gray-400 font-bold mb-1">මිල LKR (Price)</label>
+                            <input type="number" id="cakePrice" required placeholder="Ex: 6500" class="w-full bg-zinc-800 border border-zinc-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-glamRed">
+                        </div>
+                        <div>
+                            <label class="block text-gray-400 font-bold mb-1">වර්ගය (Category)</label>
+                            <select id="cakeCategory" class="w-full bg-zinc-800 border border-zinc-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-glamRed">
+                                <option value="Birthday">Birthday Cakes</option>
+                                <option value="Wedding">Wedding Cakes</option>
+                                <option value="Speciality">Speciality Cakes</option>
+                                <option value="Cupcakes">Cupcakes</option>
+                            </select>
+                        </div>
+                        <!-- File Upload Input -->
+                        <div>
+                            <label class="block text-gray-400 font-bold mb-1">ඡායාරූපය (Upload Cake Image)</label>
+                            <input type="file" id="cakeImageFile" accept="image/*" onchange="handleImagePreview(event)" class="w-full bg-zinc-800 border border-zinc-700 rounded-lg p-2 text-white text-xs file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-glamRed file:text-white hover:file:bg-glamRedDark cursor-pointer focus:outline-none">
+                            <input type="hidden" id="cakeImage">
+                            <div id="imagePreviewContainer" class="mt-2 hidden">
+                                <img id="imagePreview" src="" alt="Preview" class="w-full h-24 object-cover rounded-lg border border-zinc-700">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-gray-400 font-bold mb-1">විස්තරය (Description)</label>
+                            <textarea id="cakeDesc" rows="2" placeholder="කේක් එකේ රස සහ විශේෂතා..." class="w-full bg-zinc-800 border border-zinc-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-glamRed"></textarea>
+                        </div>
+                        <div class="pt-2 flex gap-2">
+                            <button type="submit" class="flex-1 py-2.5 bg-glamRed hover:bg-glamRedDark font-bold text-white rounded-lg transition shadow-md">
+                                Save Cake
+                            </button>
+                            <button type="button" onclick="resetForm()" class="px-3 py-2.5 bg-zinc-800 hover:bg-zinc-700 text-gray-300 font-bold rounded-lg transition">
+                                Reset
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Table Column -->
+                <div class="lg:col-span-2 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-white text-sm">දැනට පවතින කේක් ලැයිස්තුව</h4>
+                        <span id="itemCount" class="text-xs px-2.5 py-1 bg-red-950 text-glamRed rounded-full font-bold border border-glamRed/30">0 Items</span>
+                    </div>
+                    <div class="overflow-x-auto rounded-xl border border-zinc-800 max-h-[380px] overflow-y-auto">
+                        <table class="w-full text-left text-xs text-gray-300">
+                            <thead class="bg-zinc-900 text-gray-400 uppercase font-bold sticky top-0">
+                                <tr>
+                                    <th class="p-3">Image</th>
+                                    <th class="p-3">Name</th>
+                                    <th class="p-3">Price (LKR)</th>
+                                    <th class="p-3 text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminCakeTable" class="divide-y divide-zinc-800">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cakes = JSON.parse(localStorage.getItem('glamour_cakes')) || [
+            {
+                id: 1,
+                name: "Glamour Red Velvet Rose Cake",
+                price: 6500,
+                category: "Birthday",
+                image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80",
+                desc: "Rich red velvet layers with cream cheese frosting and exquisite edible roses."
+            },
+            {
+                id: 2,
+                name: "Royal Gold Wedding Cake",
+                price: 35000,
+                category: "Wedding",
+                image: "https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&w=800&q=80",
+                desc: "Multi-tier luxury wedding cake with gold leaf detailing and rich fruit filling."
+            },
+            {
+                id: 3,
+                name: "Chocolate Fudge Dream",
+                price: 5800,
+                category: "Speciality",
+                image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80",
+                desc: "Decadent Belgian chocolate fudge cake smothered in rich chocolate ganache."
+            },
+            {
+                id: 4,
+                name: "Vanilla Cupcake Box (6 pcs)",
+                price: 3200,
+                category: "Cupcakes",
+                image: "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=800&q=80",
+                desc: "Fluffy vanilla cupcakes topped with colourful buttercream swirls."
+            }
+        ];
+
+        let currentFilter = 'All';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderFilters();
+            renderCatalog();
+            renderAdminTable();
+            populateOrderDropdown();
+        });
+
+        function saveToStorage() {
+            localStorage.setItem('glamour_cakes', JSON.stringify(cakes));
+        }
+
+        function toggleCPanel() {
+            const modal = document.getElementById('cPanelModal');
+            modal.classList.toggle('hidden');
+            if (!modal.classList.contains('hidden')) {
+                renderAdminTable();
+            }
+        }
+
+        function renderFilters() {
+            const categories = ['All', 'Birthday', 'Wedding', 'Speciality', 'Cupcakes'];
+            const container = document.getElementById('filterContainer');
+            if (!container) return;
+            container.innerHTML = categories.map(cat => `
+                <button onclick="setFilter('${cat}')" class="px-4 py-2 rounded-xl text-xs font-bold transition border ${currentFilter === cat ? 'bg-glamRed text-white border-glamRed red-glow' : 'bg-zinc-900 text-gray-300 border-zinc-800 hover:border-glamRed/50'}">
+                    ${cat === 'All' ? 'සියල්ල (All)' : cat + ' Cakes'}
+                </button>
+            `).join('');
+        }
+
+        function setFilter(cat) {
+            currentFilter = cat;
+            renderFilters();
+            renderCatalog();
+        }
+
+        function renderCatalog() {
+            const grid = document.getElementById('cakeGrid');
+            if (!grid) return;
+            const filtered = currentFilter === 'All' ? cakes : cakes.filter(c => c.category === currentFilter);
+            
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-gray-500">මෙම කාණ්ඩයේ කේක් නොමැත. (No cakes found in this category)</div>`;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(cake => `
+                <div class="glass-panel rounded-3xl overflow-hidden border border-zinc-800 hover:border-glamRed/50 transition duration-300 flex flex-col justify-between group">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="${cake.image}" alt="${cake.name}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/600x400/141414/E50914?text=Glamour+Cake'">
+                        <span class="absolute top-4 left-4 px-3 py-1 bg-black/80 backdrop-blur-md text-glamRed text-xs font-black rounded-full border border-glamRed/40">
+                            ${cake.category}
+                        </span>
+                    </div>
+                    <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-glamRed transition">${cake.name}</h3>
+                            <p class="text-gray-400 text-xs mt-2 leading-relaxed">${cake.desc || ''}</p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-zinc-800/80">
+                            <div>
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest block">Price</span>
+                                <span class="text-lg font-black text-glamRed">LKR ${cake.price.toLocaleString()}</span>
+                            </div>
+                            <button onclick="selectCakeForOrder('${cake.name}')" class="px-4 py-2 bg-glamRed hover:bg-glamRedDark text-white text-xs font-bold rounded-xl transition red-glow">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function selectCakeForOrder(cakeName) {
+            const select = document.getElementById('custCake');
+            if (select) select.value = cakeName;
+            scrollToSection('contact');
+        }
+
+        function renderAdminTable() {
+            const tbody = document.getElementById('adminCakeTable');
+            const countElem = document.getElementById('itemCount');
+            if (!tbody) return;
+            if (countElem) countElem.innerText = cakes.length + ' Items';
+
+            tbody.innerHTML = cakes.map(cake => `
+                <tr class="hover:bg-zinc-900/50 transition">
+                    <td class="p-3">
+                        <img src="${cake.image}" class="w-10 h-10 object-cover rounded-lg border border-zinc-700" onerror="this.src='https://placehold.co/100x100/141414/E50914?text=Cake'">
+                    </td>
+                    <td class="p-3 font-bold text-white">${cake.name}</td>
+                    <td class="p-3 text-glamRed font-semibold">LKR ${cake.price.toLocaleString()}</td>
+                    <td class="p-3 text-right space-x-2">
+                        <button onclick="editCake(${cake.id})" class="px-2.5 py-1 bg-zinc-800 hover:bg-zinc-700 text-blue-400 rounded-md transition" title="Edit">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                        <button onclick="deleteCake(${cake.id})" class="px-2.5 py-1 bg-zinc-800 hover:bg-zinc-700 text-red-400 rounded-md transition" title="Delete">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function populateOrderDropdown() {
+            const select = document.getElementById('custCake');
+            if (!select) return;
+            select.innerHTML = cakes.map(cake => `
+                <option value="${cake.name}">${cake.name} - LKR ${cake.price.toLocaleString()}</option>
+            `).join('');
+        }
+
+        function handleImagePreview(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imageDataUrl = e.target.result;
+                    document.getElementById('cakeImage').value = imageDataUrl;
+                    document.getElementById('imagePreview').src = imageDataUrl;
+                    document.getElementById('imagePreviewContainer').classList.remove('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function saveCake(e) {
+            e.preventDefault();
+            const id = document.getElementById('cakeId').value;
+            const name = document.getElementById('cakeName').value;
+            const price = parseFloat(document.getElementById('cakePrice').value);
+            const category = document.getElementById('cakeCategory').value;
+            let image = document.getElementById('cakeImage').value;
+            const desc = document.getElementById('cakeDesc').value;
+
+            if (!image) {
+                if (id) {
+                    const existing = cakes.find(c => c.id == id);
+                    image = existing ? existing.image : 'https://placehold.co/600x400/141414/E50914?text=Glamour+Cake';
+                } else {
+                    image = 'https://placehold.co/600x400/141414/E50914?text=Glamour+Cake';
+                }
+            }
+
+            if (id) {
+                const index = cakes.findIndex(c => c.id == id);
+                if (index !== -1) {
+                    cakes[index] = { id: Number(id), name, price, category, image, desc };
+                }
+            } else {
+                const newCake = {
+                    id: Date.now(),
+                    name,
+                    price,
+                    category,
+                    image,
+                    desc
+                };
+                cakes.push(newCake);
+            }
+
+            saveToStorage();
+            renderCatalog();
+            renderAdminTable();
+            populateOrderDropdown();
+            resetForm();
+        }
+
+        function editCake(id) {
+            const cake = cakes.find(c => c.id === id);
+            if (cake) {
+                document.getElementById('cakeId').value = cake.id;
+                document.getElementById('cakeName').value = cake.name;
+                document.getElementById('cakePrice').value = cake.price;
+                document.getElementById('cakeCategory').value = cake.category;
+                document.getElementById('cakeImage').value = cake.image;
+                document.getElementById('cakeDesc').value = cake.desc || '';
+
+                if (cake.image) {
+                    document.getElementById('imagePreview').src = cake.image;
+                    document.getElementById('imagePreviewContainer').classList.remove('hidden');
+                } else {
+                    document.getElementById('imagePreviewContainer').classList.add('hidden');
+                }
+
+                document.getElementById('formTitle').innerText = "කේක් තොරතුරු වෙනස් කරන්න";
+            }
+        }
+
+        function deleteCake(id) {
+            cakes = cakes.filter(c => c.id !== id);
+            saveToStorage();
+            renderCatalog();
+            renderAdminTable();
+            populateOrderDropdown();
+        }
+
+        function resetForm() {
+            document.getElementById('cakeForm').reset();
+            document.getElementById('cakeId').value = '';
+            document.getElementById('cakeImage').value = '';
+            document.getElementById('imagePreviewContainer').classList.add('hidden');
+            document.getElementById('formTitle').innerText = "නව කේක් එකක් එකතු කරන්න";
+        }
+
+        function handleOrderSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
+            const cake = document.getElementById('custCake').value;
+            const notes = document.getElementById('custNotes').value;
+
+            const message = `Hello Glamour Cake!%0A%0A*New Order Request*%0A- *Customer Name:* ${encodeURIComponent(name)}%0A- *Phone:* ${encodeURIComponent(phone)}%0A- *Selected Cake:* ${encodeURIComponent(cake)}%0A- *Notes/Date:* ${encodeURIComponent(notes)}`;
+            
+            window.open(`https://wa.me/?text=${message}`, '_blank');
+        }
+
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
